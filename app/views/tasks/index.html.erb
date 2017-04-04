@@ -1,0 +1,19 @@
+<h1>Task Index</h1>
+<!-- Should display a list of all tasks and, for each task:
+a link to its show view (use a link_to helper)
+a link to its edit view
+a link to its delete action. Hint: a standard link does not allow to perform DELETE request, so here you should add a method: :delete option to your link_to helper. -->
+
+<!-- Should include a link to the new view to create a new task -->
+<%= link_to "Add a task", new_task_url %>
+
+<ul>
+<% @tasks.each do |task| %>
+<li>  <%= link_to task.name, task_path(task) %>
+<%= link_to "Edit", edit_task_path(task) %>
+<%= link_to "Delete", task_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+</li>
+<% end %>
+</ul>

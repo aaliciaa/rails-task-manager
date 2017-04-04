@@ -1,0 +1,10 @@
+<h1>Your task...</h1>
+<!-- <p>Find me in app/views/tasks/show.html.erb</p> -->
+
+<!--
+Should display the task's details (content, date of creation, etc.) and a back-link to the index page. -->
+
+<h2><%= @task.name %></h2>
+<p><%= @task.content %></p>
+
+<%= link_to "Back to tasks", tasks_path %>
